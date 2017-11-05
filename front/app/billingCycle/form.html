@@ -1,0 +1,28 @@
+<div role="form">
+  <div class="box-body">
+    <field id="name" readonly="vm.tabDelete" model="vm.billingCycle.name" label="Nome" grid="12 6 4" placeholder="Informe o Nome" type="text"></field>
+    <field id="month" readonly="vm.tabDelete" model="vm.billingCycle.month" label="Mês" grid="12 6 4" placeholder="Informe o Mês" type="number"></field>
+    <field id="year" readonly="vm.tabDelete" model="vm.billingCycle.year" label="Ano" grid="12 6 4" placeholder="Informe o Ano" type="numer"></field>
+  </div>
+
+  <div class="col-xs-12 col-sm-6">
+    <fieldset>
+      <legend>Créditos</legend>
+      <div ng-include="'billingCycle/credits.html'"></div>
+    </fieldset>
+  </div>
+
+  <div class="col-xs-12 col-sm-6">
+    <fieldset>
+      <legend>Débitos</legend>
+      <div ng-include="'billingCycle/debtList.html'"></div>
+    </fieldset>
+  </div>
+
+  <div class="box-footer">
+    <button class="btn btn-primary" ng-if="vm.tabCreate" ng-click="vm.create()">Incluir</button>
+    <button class="btn btn-info" ng-click="vm.update();" ng-if="vm.tabUpdate">Alterar</button>
+    <button class="btn btn-danger" ng-click="vm.excluir()" ng-if="vm.tabDelete">Excluir</button>
+    <button class="btn btn-default" ng-click="vm.refresh()">Cancelar</button>
+  </div>
+</div>
